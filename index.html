@@ -1,52 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bilhete Premiado Menor das Marcas</title>
-</head>
-<body>
-  <main class="main">
-    <section class="section__container">
-      <div class="section__box">
-        <h3 class="labelTitulo">
-          Gere seu Numeros da sortes
-        </h3>
-        <div id="telaGerador"></div>
-        <button id="btnGerador">Sortear Sequência</button>
-      </div>
-    </section>
-
-    <section class="section__container">
-      <div class="section__box">
-        <form class="form">
-          <label>Digite a sequencia que foi gerada</label> <br>
-          <input type="text" maxlength="4"><br>
-          <input type="submit" class="containerCorfimacao__btn" valor="Descubra o desconto"> 
-        </form>
-      </div>
-    </section>
-
-    <div class="cronometroExpiracao">
-      <h2>Tempo de duração da Promoção</h2>
-      <p id="tempoRestante"></p>
-    </div>
-
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bilhete Premiado Menor das Marcas</title>
+  </head>
+  <body>
     
-
+    <main class="main">
+      <div class="main__container">
+        <div class="main__container--text">
+          <div class="container--Principal">
+            <div class="container__box">
+              <h3 class="labelTitulo">
+                Gere seu Numeros da sortes
+              </h3>
+              <div id="telaGerador"></div>
+              <button id="btnGerador">Sortear Sequência</button>
+            </div>
+  
+            <div class="container__box">
+              <form class="form">
+                <label>Digite a sequencia que foi gerada</label> <br>
+                <input type="text" maxlength="4" class="inputRecebe"><br>
+                <input type="submit" class="containerCorfimacao__btn"
+                  valor="Descubra o desconto">
+              </form>
+            </div>
+  
+            <div class="cronometroExpiracao">
+              <h2>Tempo de duração da Promoção</h2>
+              <p id="tempoRestante"></p>
+            </div>
+          </div>
+        </div>
+        <div class="img">
+          <img src="img/EduImg.jpg" alt="img">
+        </div>
+      </div>
+    </main>
+    
     
     <form class="Teladesconto">
-      <h1 class="Teladesconto__text--h1">Parabens seu Desconto Adiquirido na Proxima Compra</h1>
+      <h1 class="Teladesconto__text--h1">Parabens seu Desconto Adiquirido na
+        Proxima Compra</h1>
       <p class="Teladesconto__text--p">
         <strong id="Teladesconto"></strong>
       </p>
       <button class="containerCorfimacao__btn">Voltar</button>
-
     </form>
 
-  </main>
-  <div class="Tempo_de_expiracao"></div>
-
-  <script src="script/main.js"></script>
-</body>
+    <script src="script/main.js"></script>
+  </body>
 </html>

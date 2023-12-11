@@ -83,7 +83,14 @@ function atualizarCronometro() {
   const dataAtual = new Date();
   const dataExpiracao = new Date(dataAtual.getTime() + 25 * 24 * 60 * 60 * 1000); // 25 dias em milissegundos
 
-  const diff = dataExpiracao - dataAtual;
+  let diff;
+  const tempoRestanteSalvo = localStorage.getItem('tempoRestante');
+
+  if (tempoRestanteSalvo) {
+    diff = tempoRestanteSalvo;
+  } else {
+    diff = dataExpiracao - dataAtual;
+  }
 
   if (diff <= 0) {
     document.getElementById("tempoRestante").style.color = "red";
@@ -96,8 +103,11 @@ function atualizarCronometro() {
   const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
   const segundos = Math.floor((diff % (1000 * 60)) / 1000);
 
-  const tempoRestante = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+  const tempoRestante = `${dias} dias`;
   document.getElementById("tempoRestante").textContent = tempoRestante;
+
+  // Salvar o estado do cronômetro no localStorage
+  localStorage.setItem('tempoRestante', diff);
 
   setTimeout(atualizarCronometro, 1000); // Atualiza o cronômetro a cada segundo
 }
